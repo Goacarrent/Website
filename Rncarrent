@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RN Car Rental Goa - Best Self Drive Cars in Goa</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: #f8fafc;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: linear-gradient(135deg, #0B2B5C 0%, #1a3b6e 100%);
+            color: white;
+            padding: 12px 0;
+            font-size: 14px;
+            border-bottom: 3px solid #FFD700;
+        }
+
+        .top-bar-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-info i {
+            color: #FFD700;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #FFD700;
+            transform: translateY(-2px);
+        }
+
+        /* Main Header */
+        .main-header {
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #0B2B5C, #1a3b6e);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            transform: rotate(45deg);
+        }
+
+        .logo-icon i {
+            transform: rotate(-45deg);
+        }
+
+        .logo-text h1 {
+            font-size: 24px;
+            font-weight: 800;
+            color: #0B2B5C;
+            line-height: 1.2;
+        }
+
+        .logo-text span {
+            font-size: 14px;
+            color: #666;
+            display: block;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 15px;
+        }
+
+        .nav-menu a:hover {
+            color: #0B2B5C;
+        }
+
+        .header-btn {
+            background: linear-gradient(135deg, #0B2B5C, #1a3b6e);
+            color: white !important;
+            padding: 12px 25px !important;
+            border-radius: 8px;
+            font-weight: 600 !important;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s !important;
+        }
+
+        .header-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(11,43,92,0.3);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1568605117036-5fe5e7f4b9b1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 60px 0;
+            color: white;
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-content h2 {
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #FFD700;
+            margin-bottom: 15px;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 16px;
+            line-height: 1.8;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn-primary {
+            background: #FFD700;
+            color: #0B2B5C;
+            padding: 15px 35px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255,215,0,0.3);
+        }
+
+        .btn-outline {
+            border: 2px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s;
+        }
+
+        .btn-outline:hover {
+            border-color: #FFD700;
+            background: rgba(255,215,0,0.1);
+        }
+
+        /* Booking Card */
+        .booking-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .booking-card h3 {
+            color: #0B2B5C;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .booking-card p {
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .booking-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .form-group {
+            position: relative;
+        }
+
+        .form-group i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #0B2B5C;
+            font-size: 16px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 15px 15px 15px 45px;
+            border: 2px solid #eef2f6;
+            border-radius: 10px;
+            font-size: 15px;
+            transition: all 0.3s;
+            background: #f8fafc;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #0B2B5C;
+            outline: none;
+            background: white;
+        }
+
+        .book-now-btn {
+            background: linear-gradient(135deg, #0B2B5C, #1a3b6e);
+            color: white;
+            border: none;
+            padding: 18px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .book-now-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(11,43,92,0.3);
+        }
+
+        /* Phone Reservation Section */
+        .phone-reservation {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: #0B2B5C;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: #666;
+            font-size: 16px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .reservation-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .reservation-content h3 {
+            font-size: 28px;
+            color: #0B2B5C;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .reservation-content p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-size: 16px;
+        }
+
+        .phone-number {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: #f0f4f9;
+            padding: 20px 35px;
+            border-radius: 60px;
+            margin: 20px 0;
+        }
+
+        .phone-number i {
+            font-size: 32px;
+            color: #0B2B5C;
+        }
+
+        .phone-number span {
+            font-size: 28px;
+            font-weight: 800;
+            color: #0B2B5C;
+        }
+
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feature-item i {
+            color: #0B2B5C;
+            font-size: 20px;
+        }
+
+        .reservation-image {
+            background: linear-gradient(135deg, #0B2B5C, #1a3b6e);
+            border-radius: 30px;
+            padding: 50px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .reservation-image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        }
+
+        .reservation-image h4 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .reservation-image p {
+            opacity: 0.9;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .call-now-btn {
+            background: #FFD700;
+            color: #0B2B5C;
+            border: none;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .call-now-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255,215,0,0.3);
+        }
+
+        /* Exclusive Offers Section */
+        .offers-section {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+
+        .offers-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .offer-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .offer-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(11,43,92,0.1);
+        }
+
+        .offer-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #0B2B5C, #1a3b6e);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: white;
+            font-size: 32px;
+            transform: rotate(45deg);
+        }
+
+        .offer-icon i {
+            transform: rotate(-45deg);
+        }
+
+        .offer-card h3 {
+            font-size: 22px;
+            color: #0B2B5C;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .offer-card p {
+            color: #666;
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        /* Fleet Section */
+        .fleet-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .fleet-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            margin-top: 50px;
+        }
+
+        .fleet-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+
+        .fleet-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(11,43,92,0.1);
+        }
+
+        .fleet-image {
+            height: 160px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .fleet-tag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #FFD700;
+            color: #0B2B5C;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .fleet-details {
+            padding: 20px;
+        }
+
+        .fleet-details h4 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .fleet-specs {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            color: #666;
+            font-size: 13px;
+        }
+
+        .fleet-specs i {
+            color: #0B2B5C;
+        }
+
+        .fleet-price {
+            font-size: 20px;
+            font-weight: 800;
+            color: #0B2B5C;
+            margin-bottom: 15px;
+        }
+
+        .fleet-price span {
+            font-size: 14px;
+            font-weight: 400;
+            color: #666;
+        }
+
+        .fleet-btn {
+            width: 100%;
+            background: transparent;
+            border: 2px solid #0B2B5C;
+            color: #0B2B5C;
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .fleet-btn:hover {
+            background: #0B2B5C;
+            color: white;
+        }
+
+        /* Why Choose Us */
+        .why-choose {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #0B2B5C, #1a3b6e);
+            color: white;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .feature-box {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .feature-box i {
+            font-size: 40px;
+            color: #FFD700;
+            margin-bottom: 20px;
+        }
+
+        .feature-box h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .feature-box p {
+            opacity: 0.8;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        footer {
+            background: #0a1c38;
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 50px;
+        }
+
+        .footer-logo h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #FFD700;
+        }
+
+        .footer-logo p {
+            opacity: 0.7;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .footer-links h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #FFD700;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links ul li a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 14px;
+        }
+
+        .footer-links ul li a:hover {
+            color: #FFD700;
+        }
+
+        .footer-contact p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            color: rgba(255,255,255,0.7);
+            font-size: 14px;
+        }
+
+        .footer-contact i {
+            color: #FFD700;
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 40px auto 0;
+            padding: 20px 30px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            color: rgba(255,255,255,0.5);
+            font-size: 14px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .fleet-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .features-grid,
+            .offers-grid,
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .contact-info {
+                justify-content: center;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nav-menu {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .reservation-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .fleet-grid,
+            .features-grid,
+            .offers-grid,
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-content h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="contact-info">
+                <span><i class="fas fa-phone-alt"></i> +91 6287168644</span>
+                <span><i class="fas fa-envelope"></i> info@rncarrentalgoa.in</span>
+                <span><i class="fas fa-map-marker-alt"></i> Madgaon Railway Station | Goa Airport | Mopa Airport</span>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logo-area">
+                <div class="logo-icon">
+                    <i class="fas fa-car"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>RN CAR RENTAL</h1>
+                    <span>Goa's Best Self Drive Cars</span>
+                </div>
+            </div>
+            <nav class="nav-menu">
+                <a href="#">Home</a>
+                <a href="#">Fleet</a>
+                <a href="#">Services</a>
+                <a href="#">Locations</a>
+                <a href="#">Contact</a>
+                <a href="#" class="header-btn"><i class="fas fa-calendar-check"></i> Book Now</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section with Booking -->
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h2>WELCOME TO RN CAR RENTAL</h2>
+                <h1>Best Car Rental in Goa Offering Self Drive Cars</h1>
+                <p>Experience the freedom of the open road with our premium self-drive cars. Quick and easy car rental service at Goa Airport, Madgaon Railway Station, and Mopa Airport.</p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn-primary"><i class="fas fa-car"></i> Explore Fleet</a>
+                    <a href="#" class="btn-outline"><i class="fas fa-phone-alt"></i> Call Now</a>
+                </div>
+            </div>
+            <div class="booking-card">
+                <h3>CONTINUE CAR RESERVATION</h3>
+                <p>Book your ride instantly with RN Car Rental</p>
+                <form class="booking-form">
+                    <div class="form-group">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <select>
+                            <option>Select Pickup Location</option>
+                            <option>Madgaon Railway Station</option>
+                            <option>Goa Airport (GOI)</option>
+                            <option>Mopa Airport</option>
+                            <option>Panaji</option>
+                            <option>Calangute</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-calendar"></i>
+                        <input type="date" placeholder="Pickup Date">
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-clock"></i>
+                        <input type="time" placeholder="Pickup Time">
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-calendar-alt"></i>
+                        <input type="date" placeholder="Dropoff Date">
+                    </div>
+                    <button type="submit" class="book-now-btn"><i class="fas fa-search"></i> SEARCH AVAILABLE CARS</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phone Reservation Section -->
+    <section class="phone-reservation">
+        <div class="container">
+            <div class="section-title">
+                <h2>Phone Reservation</h2>
+                <p>Booking a car in Goa is now just one call away!</p>
+            </div>
+            <div class="reservation-grid">
+                <div class="reservation-content">
+                    <h3>Fast & Easy Phone Reservations</h3>
+                    <p>At RN Car Rental, we offer fast and easy phone reservations for self-drive and chauffeur-driven cars across Madgaon Railway Station, Goa Airport, and Mopa Airport. Simply call us, share your pickup location, and get instant booking confirmation — no paperwork, no delays!</p>
+                    
+                    <div class="phone-number">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>+91 6287168644</span>
+                    </div>
+                    
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Instant Confirmation</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>No Paperwork</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>24/7 Support</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Best Rates</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="reservation-image">
+                    <h4>Call & Book</h4>
+                    <p>Get instant confirmation over the phone. No waiting, no hassle!</p>
+                    <button class="call-now-btn"><i class="fas fa-phone-alt"></i> Call Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exclusive Offers Section -->
+    <section class="offers-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Exclusive Offers & Best Rates</h2>
+                <p>Premium services at prices that fit your budget</p>
+            </div>
+            <div class="offers-grid">
+                <div class="offer-card">
+                    <div class="offer-icon">
+                        <i class="fas fa-tag"></i>
+                    </div>
+                    <h3>Airport Special</h3>
+                    <p>Special discounts on rentals from Goa Airport and Mopa Airport. Mention your flight number for additional benefits!</p>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Weekly Rental</h3>
+                    <p>Book for 7+ days and get up to 20% off on all vehicle categories. Perfect for long Goa vacations!</p>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Group Discount</h3>
+                    <p>Traveling with family or friends? Get special group rates on SUVs and Tempo Travellers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fleet Section -->
+    <section class="fleet-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Premium Fleet</h2>
+                <p>Modern sedans, SUVs, and luxury cars for every need</p>
+            </div>
+            <div class="fleet-grid">
+                <div class="fleet-card">
+                    <div class="fleet-image" style="background-image: url('https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')">
+                        <span class="fleet-tag">Popular</span>
+                    </div>
+                    <div class="fleet-details">
+                        <h4>Maruti Suzuki Swift</h4>
+                        <div class="fleet-specs">
+                            <span><i class="fas fa-users"></i> 5 Seats</span>
+                            <span><i class="fas fa-gas-pump"></i> Petrol</span>
+                            <span><i class="fas fa-car"></i> Manual</span>
+                        </div>
+                        <div class="fleet-price">₹2,499 <span>/ day</span></div>
+                        <button class="fleet-btn">Book Now</button>
+                    </div>
+                </div>
+                <div class="fleet-card">
+                    <div class="fleet-image" style="background-image: url('https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')">
+                        <span class="fleet-tag">Automatic</span>
+                    </div>
+                    <div class="fleet-details">
+                        <h4>Hyundai i20</h4>
+                        <div class="fleet-specs">
+                            <span><i class="fas fa-users"></i> 5 Seats</span>
+                            <span><i class="fas fa-gas-pump"></i> Diesel</span>
+                            <span><i class="fas fa-car"></i> Automatic</span>
+                        </div>
+                        <div class="fleet-price">₹3,199 <span>/ day</span></div>
+                        <button class="fleet-btn">Book Now</button>
+                    </div>
+                </div>
+                <div class="fleet-card">
+                    <div class="fleet-image" style="background-image: url('https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')">
+                        <span class="fleet-tag">4x4</span>
+                    </div>
+                    <div class="fleet-details">
+                        <h4>Mahindra Thar</h4>
+                        <div class="fleet-specs">
+                            <span><i class="fas fa-users"></i> 4 Seats</span>
+                            <span><i class="fas fa-gas-pump"></i> Diesel</span>
+                            <span><i class="fas fa-car"></i> 4x4</span>
+                        </div>
+                        <div class="fleet-price">₹4,999 <span>/ day</span></div>
+                        <button class="fleet-btn">Book Now</button>
+                    </div>
+                </div>
+                <div class="fleet-card">
+                    <div class="fleet-image" style="background-image: url('https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')">
+                        <span class="fleet-tag">Luxury</span>
+                    </div>
+                    <div class="fleet-details">
+                        <h4>Toyota Innova</h4>
+                        <div class="fleet-specs">
+                            <span><i class="fas fa-users"></i> 7 Seats</span>
+                            <span><i class="fas fa-gas-pump"></i> Diesel</span>
+                            <span><i class="fas fa-car"></i> Manual</span>
+                        </div>
+                        <div class="fleet-price">₹4,499 <span>/ day</span></div>
+                        <button class="fleet-btn">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: white;">Why Choose RN Car Rental?</h2>
+                <p style="color: rgba(255,255,255,0.9);">Experience the difference with our premium service</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-box">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Fully Insured</h3>
+                    <p>All vehicles come with comprehensive insurance for your peace of mind</p>
+                </div>
+                <div class="feature-box">
+                    <i class="fas fa-clock"></i>
+                    <h3>24/7 Support</h3>
+                    <p>Round-the-clock customer assistance at all our locations</p>
+                </div>
+                <div class="feature-box">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Multiple Locations</h3>
+                    <p>Available at Madgaon Station, Goa Airport & Mopa Airport</p>
+                </div>
+                <div class="feature-box">
+                    <i class="fas fa-wrench"></i>
+                    <h3>Well Maintained</h3>
+                    <p>Regular servicing and maintenance of all vehicles</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h3>RN CAR RENTAL</h3>
+                <p>RN Car Rental Goa – Best Car Rental in Goa offering self drive cars and quick car rental service at Goa Airport, Madgaon Railway Station, and Mopa Airport.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Our Fleet</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Locations</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Our Locations</h4>
+                <ul>
+                    <li><a href="#">Madgaon Railway Station</a></li>
+                    <li><a href="#">Goa Airport (GOI)</a></li>
+                    <li><a href="#">Mopa Airport</a></
